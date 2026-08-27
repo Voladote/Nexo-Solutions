@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexo Solutions | Páginas Web para Negocios</title>
+  <meta name="description" content="Creamos páginas web modernas y accesibles para pequeños negocios, emprendimientos y proyectos.">
+  <meta name="theme-color" content="#0b63f6">
+  <meta property="og:title" content="Nexo Solutions | Páginas Web para Negocios">
+  <meta property="og:description" content="Tu negocio. Ahora también en la web.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="logo.png">
+  <style>
+    :root{
+      --blue:#0b63f6; --blue2:#0849b8; --ink:#0c1730; --muted:#60708d;
+      --line:#e7edf7; --soft:#f5f9ff; --white:#fff; --shadow:0 18px 50px rgba(14,46,95,.10);
+      --radius:22px; --max:1160px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .section{padding:96px 0}
+    .eyebrow{color:var(--blue);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+    h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:.98;letter-spacing:-.055em}
+    h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.05;letter-spacing:-.035em}
+    h3{line-height:1.15}
+    .lead{font-size:1.08rem;color:var(--muted);max-width:650px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:13px;font-weight:800;border:1px solid transparent;cursor:pointer;transition:.25s}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 25px rgba(11,99,246,.22)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--blue2)}
+    .btn-ghost{background:#fff;border-color:#dce6f5;color:var(--ink)}
+    .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+    .btn-block{width:100%}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(231,237,247,.8)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900}
+    .logo-slot{width:150px;height:44px;border:1.5px dashed #b9c8df;border-radius:10px;display:grid;place-items:center;color:#8a9ab4;font-size:.7rem;overflow:hidden;background:#fff}
+    .logo-slot img{width:100%;height:100%;object-fit:contain}
+    .navlinks{display:flex;align-items:center;gap:22px;font-size:.9rem;font-weight:700;color:#42516b}
+    .navlinks a:hover{color:var(--blue)}
+    .menu{display:none;border:0;background:transparent;font-size:1.7rem;cursor:pointer}
+    .mobile-menu{display:none;padding:12px 20px 20px;border-top:1px solid var(--line)}
+    .mobile-menu a{display:block;padding:11px 0;font-weight:700}
+
+    /* Hero */
+    .hero{padding:80px 0 70px;background:radial-gradient(circle at 85% 10%,#e8f2ff 0,transparent 35%),linear-gradient(180deg,#fff,#f7fbff)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+    .hero-copy p{margin:24px 0 28px}
+    .price-pill{display:inline-flex;align-items:center;gap:8px;background:#eaf3ff;color:var(--blue);padding:8px 12px;border-radius:999px;font-weight:900;margin-bottom:18px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .mockup{position:relative}
+    .device{background:#0d172a;border-radius:20px;padding:10px;box-shadow:0 25px 70px rgba(20,61,120,.22);transform:rotate(1deg)}
+    .screen{background:#fff;border-radius:13px;min-height:390px;overflow:hidden}
+    .screen-top{height:42px;background:#f1f5fb;display:flex;align-items:center;gap:6px;padding:0 14px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#c9d4e4}
+    .screen-body{padding:26px}
+    .fake-bar{height:10px;width:42%;border-radius:8px;background:#dce8fb;margin-bottom:24px}
+    .fake-title{height:30px;width:75%;border-radius:8px;background:#0c1730;margin-bottom:12px}
+    .fake-title.small{width:52%;height:20px;background:#d7e5fb}
+    .fake-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+    .fake-card{height:125px;border-radius:13px;background:linear-gradient(145deg,#eaf3ff,#cfe2ff)}
+    .phone{position:absolute;right:-20px;bottom:-28px;width:145px;background:#0d172a;padding:7px;border-radius:23px;box-shadow:0 20px 40px rgba(20,61,120,.2)}
+    .phone .screen{min-height:255px}
+    .phone .screen-body{padding:15px}
+    .phone .fake-cards{grid-template-columns:1fr 1fr;margin-top:16px}
+    .phone .fake-card{height:75px}
+
+    /* General */
+    .section-head{margin-bottom:42px;display:flex;justify-content:space-between;align-items:end;gap:30px}
+    .section-head .lead{max-width:540px}
+    .soft{background:var(--soft)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 8px 25px rgba(14,46,95,.04)}
+    .icon{width:46px;height:46px;border-radius:14px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;font-weight:900;margin-bottom:20px}
+    .card p{color:var(--muted);margin-top:10px}
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+    .compare-box{padding:30px;border-radius:var(--radius);border:1px solid var(--line)}
+    .compare-box.good{background:#f3f8ff;border-color:#cfe1ff}
+    .compare-box ul,.plan ul{list-style:none;margin-top:18px;display:grid;gap:10px}
+    li::before{content:"✓";color:var(--blue);font-weight:900;margin-right:9px}
+
+    /* Services */
+    .service-card{min-height:220px}
+    .service-card h3{font-size:1.25rem}
+    .service-card ul{color:var(--muted);margin-top:14px;list-style:none}
+    .service-card li::before{content:"•";margin-right:8px}
+
+    /* Plans */
+    .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+    .plan{position:relative;border:1px solid var(--line);border-radius:24px;padding:27px;background:#fff;display:flex;flex-direction:column}
+    .plan.featured{border:2px solid var(--blue);box-shadow:var(--shadow);transform:translateY(-7px)}
+    .badge{position:absolute;top:-13px;right:18px;background:var(--blue);color:#fff;border-radius:999px;padding:5px 10px;font-size:.72rem;font-weight:900}
+    .plan .price{font-size:2.6rem;font-weight:950;letter-spacing:-.04em;margin:8px 0}
+    .plan .desc{color:var(--muted);min-height:52px}
+    .plan ul{flex:1;margin-bottom:24px;font-size:.92rem}
+    .custom-plan{margin-top:18px;background:#0d5de5;color:#fff;border-radius:24px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .custom-plan p{opacity:.85}
+
+    /* Table */
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px}
+    table{width:100%;border-collapse:collapse;min-width:760px}
+    th,td{padding:15px 16px;border-bottom:1px solid var(--line);text-align:center}
+    th:first-child,td:first-child{text-align:left}
+    th{background:#f7faff}
+    tr:last-child td{border-bottom:0}
+
+    /* Quiz */
+    .quiz{background:#0d1730;color:#fff;border-radius:28px;padding:34px}
+    .quiz p{color:#c9d5e9}
+    .quiz-options{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:25px 0}
+    .quiz-option{border:1px solid #33425d;background:#17233d;color:#fff;border-radius:14px;padding:14px;text-align:center;cursor:pointer}
+    .quiz-option.active{background:#0b63f6;border-color:#0b63f6}
+    .quiz-result{background:#fff;color:var(--ink);border-radius:18px;padding:20px;display:none}
+    .quiz-result strong{color:var(--blue)}
+
+    /* Portfolio */
+    .portfolio{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+    .portfolio-preview{min-height:330px;border-radius:24px;background:linear-gradient(145deg,#0d1730,#1671ff);padding:25px;display:grid;place-items:center;box-shadow:var(--shadow)}
+    .portfolio-window{width:88%;height:75%;background:#fff;border-radius:15px;padding:20px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+    .portfolio-window .fake-cards{margin-top:20px}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .step{position:relative;padding:25px;border-top:3px solid var(--blue)}
+    .num{font-size:.78rem;font-weight:900;color:var(--blue);margin-bottom:15px}
+
+    /* FAQ */
+    .faq{max-width:850px;margin:auto}
+    details{border-bottom:1px solid var(--line);padding:20px 0}
+    summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:15px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";color:var(--blue);font-size:1.3rem}
+    details[open] summary::after{content:"−"}
+    details p{color:var(--muted);padding-top:12px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
+    .contact-card{background:#0d1730;color:#fff;border-radius:26px;padding:32px}
+    .contact-card p{color:#c8d4e8;margin-top:10px}
+    .contact-link{display:block;margin-top:22px;color:#fff;font-weight:800}
+    form{display:grid;gap:14px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{font-size:.83rem;font-weight:800}
+    input,select,textarea{width:100%;margin-top:6px;border:1px solid #dce5f2;border-radius:12px;padding:12px 13px;outline:none;background:#fff}
+    input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #eaf3ff}
+    textarea{min-height:125px;resize:vertical}
+    .payment{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+    /* CTA/footer */
+    .cta{background:linear-gradient(135deg,#0b63f6,#0849b8);color:#fff;border-radius:30px;padding:55px;text-align:center}
+    .cta p{max-width:650px;margin:12px auto 24px;color:#dceaff}
+    footer{background:#081126;color:#d6e0f0;padding:55px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+    footer h3{color:#fff;margin-bottom:15px}
+    footer a{display:block;margin:8px 0;color:#aebbd0}
+    .footer-bottom{border-top:1px solid #1b2944;margin-top:35px;padding-top:20px;font-size:.85rem;color:#8fa0ba;display:flex;justify-content:space-between;gap:15px}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:1000px){
+      .navlinks{display:none}.menu{display:block}.plans{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr}
+      .quiz-options{grid-template-columns:1fr 1fr}.hero-grid,.portfolio,.contact-grid{grid-template-columns:1fr}.hero{padding-top:55px}
+      .steps{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:650px){
+      .container{width:min(calc(100% - 28px),var(--max))}.section{padding:70px 0}.logo-slot{width:125px}
+      .hero-actions,.fields,.comparison,.grid-2,.grid-3,.plans,.steps,.payment{grid-template-columns:1fr;display:grid}
+      .hero-actions{display:flex}.phone{right:-5px;width:120px}.screen{min-height:320px}
+      .section-head{display:block}.section-head .lead{margin-top:14px}.custom-plan{display:block}.custom-plan .btn{margin-top:18px}
+      .quiz{padding:25px 20px}.quiz-options{grid-template-columns:1fr}.cta{padding:40px 22px}
+      .footer-grid{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="Nexo Solutions inicio">
+      <div class="logo-slot"><img src="logo.png" alt="Logo Nexo Solutions" onerror="this.style.display='none'"><span>logo.png</span></div>
+    </a>
+    <nav class="navlinks">
+      <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proyectos">Proyectos</a><a href="#proceso">Cómo trabajamos</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a>
+      <a class="btn btn-primary" href="#contacto">Solicitar proyecto</a>
+    </nav>
+    <button class="menu" id="menuBtn" aria-label="Abrir menú">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proyectos">Proyectos</a><a href="#proceso">Cómo trabajamos</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a>
+    <a class="btn btn-primary btn-block" href="#contacto">Solicitar proyecto</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="price-pill">● Planes desde $5</div>
+      <h1>Tu negocio.<br>Ahora también<br>en la web.</h1>
+      <p class="lead">Creamos páginas web modernas, accesibles y adaptadas a tu negocio.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#planes">Ver planes</a><a class="btn btn-ghost" href="#proyectos">Ver proyectos</a></div>
+    </div>
+    <div class="mockup reveal" aria-label="Vista previa de una página web">
+      <div class="device"><div class="screen"><div class="screen-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="screen-body"><div class="fake-bar"></div><div class="fake-title"></div><div class="fake-title small"></div><div class="fake-cards"><div class="fake-card"></div><div class="fake-card"></div><div class="fake-card"></div></div></div></div></div>
+      <div class="phone"><div class="screen"><div class="screen-top"></div><div class="screen-body"><div class="fake-title" style="width:80%;height:18px"></div><div class="fake-title small" style="width:65%;height:12px"></div><div class="fake-cards"><div class="fake-card"></div><div class="fake-card"></div></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="que-es">
+  <div class="container grid-2">
+    <div class="reveal"><div class="eyebrow">Nexo Solutions</div><h2>¿Qué es Nexo Solutions?</h2></div>
+    <div class="reveal"><p class="lead">Nexo Solutions es una iniciativa dedicada a crear páginas web modernas y accesibles para pequeños negocios, emprendimientos y personas que quieren tener una presencia profesional en Internet.</p><p class="lead" style="margin-top:16px">El objetivo es hacer que crear una página web sea algo más sencillo y accesible.</p></div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">El problema</div><h2>Tu negocio merece algo más que una red social.</h2></div><p class="lead">Una web permite reunir en un solo lugar productos, servicios, precios, ubicación, horarios e información de contacto.</p></div>
+    <div class="comparison">
+      <div class="compare-box reveal"><h3>Sin página propia</h3><ul><li>Red social</li><li>Publicaciones</li><li>Mensajes</li><li>Información dispersa</li></ul></div>
+      <div class="compare-box good reveal"><h3>Con página web</h3><ul><li>Cliente → página</li><li>Información clara</li><li>Productos y servicios</li><li>Contacto directo desde la web</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Servicios</div><h2>¿Qué podemos crear?</h2></div><p class="lead">Soluciones pensadas para negocios reales y necesidades diferentes.</p></div>
+    <div class="grid-3">
+      <article class="card service-card reveal"><div class="icon">01</div><h3>Página informativa</h3><p>Quiénes son, qué hacen, servicios, horarios, ubicación y contacto.</p></article>
+      <article class="card service-card reveal"><div class="icon">02</div><h3>Catálogo</h3><p>Productos, fotografías, precios, descripciones y categorías.</p></article>
+      <article class="card service-card reveal"><div class="icon">03</div><h3>Landing Page</h3><p>Para productos, servicios, eventos, promociones y campañas.</p></article>
+      <article class="card service-card reveal"><div class="icon">04</div><h3>Página para restaurantes</h3><p>Menú, fotografías, horarios, ubicación, negocio y redes sociales.</p></article>
+      <article class="card service-card reveal"><div class="icon">05</div><h3>Página para servicios</h3><p>Ideal para barberías, gimnasios, técnicos, profesionales, salones y emprendedores.</p></article>
+      <article class="card service-card reveal"><div class="icon">06</div><h3>Proyectos personalizados</h3><p>Para necesidades que no entren en los planes estándar.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Características</div><h2>Diseñamos pensando en tus clientes.</h2></div></div>
+    <div class="grid-3">
+      <div class="card reveal"><h3>Responsive</h3><p>Funciona correctamente en celulares, tablets y computadoras.</p></div>
+      <div class="card reveal"><h3>Diseño moderno</h3><p>Diseños limpios y actuales adaptados a cada proyecto.</p></div>
+      <div class="card reveal"><h3>Integración con redes</h3><p>Conexión con Instagram y otras plataformas cuando sea necesario.</p></div>
+      <div class="card reveal"><h3>Catálogos</h3><p>Presentación organizada de productos y servicios.</p></div>
+      <div class="card reveal"><h3>Formularios</h3><p>Los visitantes pueden enviar consultas desde la página.</p></div>
+      <div class="card reveal"><h3>Ubicación</h3><p>Posibilidad de integrar mapas y ubicación del negocio.</p></div>
+      <div class="card reveal"><h3>Animaciones</h3><p>Animaciones suaves para mejorar la experiencia visual.</p></div>
+      <div class="card reveal"><h3>Optimización</h3><p>Estructura pensada para una navegación rápida y cómoda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="planes">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Planes</div><h2>Planes para cada necesidad.</h2></div><p class="lead">Empieza con lo esencial y escala cuando tu proyecto lo necesite.</p></div>
+    <div class="plans">
+      <article class="plan reveal"><h3>START</h3><div class="price">$5</div><p class="desc">Lo esencial para empezar.</p><ul><li>Página básica</li><li>Información principal</li><li>Una sección</li><li>Imágenes del cliente</li><li>Redes sociales</li><li>Responsive</li><li>Publicación online</li></ul><small>No incluye cambios posteriores. Cambios adicionales se cotizan aparte.</small><a class="btn btn-primary btn-block" style="margin-top:20px" href="#contacto" data-plan="Start">Elegir Start</a></article>
+      <article class="plan reveal"><h3>BASIC</h3><div class="price">$10</div><p class="desc">Una presencia web más completa.</p><ul><li>Página web</li><li>Varias secciones</li><li>Información del negocio</li><li>Galería</li><li>Servicios o productos</li><li>Redes sociales</li><li>Ubicación</li><li>Responsive</li><li>Personalización básica</li><li>Animaciones sencillas</li><li>1 ronda de cambios</li></ul><a class="btn btn-primary btn-block" href="#contacto" data-plan="Basic">Elegir Basic</a></article>
+      <article class="plan featured reveal"><span class="badge">MÁS ELEGIDO</span><h3>PRO</h3><div class="price">$15</div><p class="desc">Para negocios que quieren algo más profesional.</p><ul><li>Todo lo incluido en Basic</li><li>Catálogo básico</li><li>Diseño más personalizado</li><li>Animaciones avanzadas</li><li>Formularios</li><li>Integraciones</li><li>Optimización adicional</li><li>2 rondas de cambios</li><li>Soporte durante un período definido</li></ul><a class="btn btn-primary btn-block" href="#contacto" data-plan="Pro">Elegir Pro</a></article>
+      <article class="plan reveal"><h3>PREMIUM</h3><div class="price">$20</div><p class="desc">Una experiencia web más completa.</p><ul><li>Todo lo incluido en Pro</li><li>Catálogo más completo</li><li>Diseño totalmente personalizado</li><li>Secciones adicionales</li><li>Funciones especiales</li><li>Animaciones premium</li><li>Optimización avanzada</li><li>3 rondas de cambios</li><li>Soporte durante un período definido</li></ul><a class="btn btn-primary btn-block" href="#contacto" data-plan="Premium">Elegir Premium</a></article>
+    </div>
+    <div class="custom-plan reveal"><div><h3>PLAN PERSONALIZADO · Desde $20</h3><p>¿Necesitas algo diferente? Cuéntanos qué necesitas y crearemos una propuesta adaptada a tu proyecto.</p></div><a class="btn" style="background:#fff;color:#0b63f6" href="#contacto" data-plan="Personalizado">Solicitar proyecto personalizado</a></div>
+    <div style="margin-top:42px" class="reveal">
+      <h3 style="margin-bottom:16px">Condiciones de los planes</h3>
+      <p class="lead" style="font-size:.95rem">Los planes corresponden al desarrollo del sitio web y sus características especificadas. Dominio no incluido salvo que se indique expresamente. Servicios externos, hosting, APIs o herramientas de terceros pueden generar costos adicionales. Los cambios posteriores al límite incluido pueden tener un costo adicional. Las características se acuerdan antes de comenzar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Comparación</div><h2>Compara los planes.</h2></div></div>
+    <div class="table-wrap reveal">
+      <table><thead><tr><th>Característica</th><th>$5</th><th>$10</th><th>$15</th><th>$20</th></tr></thead>
+      <tbody>
+        <tr><td>Página web</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Responsive</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Varias secciones</td><td>—</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Galería</td><td>—</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Catálogo</td><td>—</td><td>Básico</td><td>✓</td><td>Completo</td></tr><tr><td>Animaciones</td><td>Básicas</td><td>Básicas</td><td>Avanzadas</td><td>Premium</td></tr><tr><td>Formularios</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr><tr><td>Personalización</td><td>Básica</td><td>Media</td><td>Alta</td><td>Completa</td></tr><tr><td>Cambios incluidos</td><td>—</td><td>1</td><td>2</td><td>3</td></tr><tr><td>Soporte</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="calculadora">
+  <div class="container">
+    <div class="quiz reveal"><div class="eyebrow" style="color:#80b2ff">Asesor digital</div><h2>¿Qué plan necesitas?</h2><p>Responde unas preguntas sencillas y te mostramos la opción que más se adapta.</p>
+      <div class="quiz-options" id="quiz">
+        <button class="quiz-option" data-score="1">Página sencilla</button><button class="quiz-option" data-score="2">Varias secciones</button><button class="quiz-option" data-score="3">Catálogo</button><button class="quiz-option" data-score="4">Formularios</button><button class="quiz-option" data-score="5">Funciones personalizadas</button>
+      </div>
+      <div class="quiz-result" id="quizResult">Tu selección apunta al <strong id="planResult">plan Basic</strong>.<br><a class="btn btn-primary" href="#contacto" id="quizLink" style="margin-top:12px">Solicitar este plan</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proyectos">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Portafolio</div><h2>Conoce nuestro trabajo.</h2></div><p class="lead">Estos son algunos de los proyectos que hemos desarrollado.</p></div>
+    <div class="portfolio">
+      <div class="portfolio-preview reveal"><div class="portfolio-window"><div class="fake-bar"></div><div class="fake-title" style="width:60%;height:22px"></div><div class="fake-title small"></div><div class="fake-cards"><div class="fake-card"></div><div class="fake-card"></div><div class="fake-card"></div></div></div></div>
+      <div class="reveal"><div class="eyebrow">Proyecto destacado</div><h2 style="font-size:2.4rem">TOPSTYLECAPS</h2><p class="lead" style="margin:16px 0">Proyecto de catálogo online desarrollado para mostrar productos de forma organizada, moderna y accesible desde cualquier dispositivo.</p><p style="color:var(--muted)">Capturas y enlace real del proyecto pueden incorporarse aquí cuando se disponga de ellos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Para quién</div><h2>Pensado para pequeños negocios.</h2></div></div>
+    <div class="grid-3">
+      <div class="card reveal"><h3>Restaurantes</h3><p>Menús, horarios, ubicación y presencia digital.</p></div><div class="card reveal"><h3>Barberías y salones</h3><p>Servicios, galería, información y contacto.</p></div><div class="card reveal"><h3>Tiendas</h3><p>Productos, categorías y catálogos.</p></div><div class="card reveal"><h3>Emprendimientos</h3><p>Una presencia profesional desde el inicio.</p></div><div class="card reveal"><h3>Profesionales</h3><p>Presentación clara de servicios y experiencia.</p></div><div class="card reveal"><h3>Técnicos y negocios locales</h3><p>Información útil para que nuevos clientes te encuentren.</p></div>
+    </div>
+    <p class="lead" style="margin-top:28px">No importa si estás empezando o si ya tienes un negocio establecido. Podemos ayudarte a crear una presencia web adaptada a lo que necesitas.</p>
+  </div>
+</section>
+
+<section class="section" id="proceso">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Proceso</div><h2>Así trabajamos.</h2></div></div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01 — CUÉNTANOS</div><h3>Nos explicas</h3><p class="lead" style="font-size:.95rem;margin-top:8px">Qué hace tu negocio y qué necesitas.</p></div>
+      <div class="step reveal"><div class="num">02 — ELEGIMOS</div><h3>Encontramos tu plan</h3><p class="lead" style="font-size:.95rem;margin-top:8px">Te ayudamos a determinar qué opción se adapta mejor.</p></div>
+      <div class="step reveal"><div class="num">03 — CREAMOS</div><h3>Diseñamos y desarrollamos</h3><p class="lead" style="font-size:.95rem;margin-top:8px">Creamos tu página con una estructura clara y moderna.</p></div>
+      <div class="step reveal"><div class="num">04 — PUBLICAMOS</div><h3>Tu página online</h3><p class="lead" style="font-size:.95rem;margin-top:8px">Una vez terminada y aprobada, queda disponible online.</p></div>
+    </div>
+    <div style="margin-top:45px;text-align:center"><h3>Simple para ti. Profesional para tus clientes.</h3></div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container grid-2">
+    <div class="reveal"><div class="eyebrow">Asesoría</div><h2>¿No sabes qué necesitas?</h2></div>
+    <div class="reveal"><p class="lead">No necesitas saber de programación ni diseño. Cuéntanos qué hace tu negocio y te ayudaremos a encontrar la opción más adecuada.</p><a class="btn btn-primary" href="#contacto" style="margin-top:20px">Quiero asesoría</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Por qué Nexo</div><h2>¿Por qué elegir Nexo Solutions?</h2></div></div>
+    <div class="grid-3">
+      <div class="card reveal"><h3>Precios accesibles</h3><p>Planes pensados para pequeños negocios y emprendimientos.</p></div><div class="card reveal"><h3>Diseño moderno</h3><p>Queremos que tu negocio se vea profesional.</p></div><div class="card reveal"><h3>Atención personalizada</h3><p>Cada proyecto se adapta a las necesidades del cliente.</p></div><div class="card reveal"><h3>Claridad</h3><p>Explicamos qué incluye cada plan.</p></div><div class="card reveal"><h3>Flexibilidad</h3><p>Si necesitas algo diferente, podemos crear un proyecto personalizado.</p></div><div class="card reveal"><h3>Enfoque en el cliente</h3><p>La página no solo debe verse bien; debe ser útil para quienes visitan tu negocio.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="card reveal" style="text-align:center;padding:42px"><div class="eyebrow">Testimonios</div><h2>Estamos comenzando nuestro camino.</h2><p class="lead" style="margin:12px auto">Sé parte de los primeros proyectos de Nexo Solutions.</p></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">FAQ</div><h2>Preguntas frecuentes.</h2></div></div>
+    <div class="faq reveal">
+      <details><summary>¿Cuánto cuesta una página web?</summary><p>Los planes de Nexo Solutions comienzan desde $5 y llegan hasta $20, dependiendo de las características del proyecto.</p></details>
+      <details><summary>¿Qué incluye cada plan?</summary><p>Puedes revisar el detalle completo en la sección de planes y la tabla comparativa.</p></details>
+      <details><summary>¿Puedo pedir algo que no está incluido?</summary><p>Sí. Para eso existe el plan personalizado.</p></details>
+      <details><summary>¿Puedo tener mi propio dominio?</summary><p>Sí. El dominio puede contratarse por separado.</p></details>
+      <details><summary>¿El dominio está incluido?</summary><p>No necesariamente. Depende del proyecto y del plan acordado.</p></details>
+      <details><summary>¿La página funciona en celular?</summary><p>Sí. Todas las páginas deben ser adaptables a dispositivos móviles.</p></details>
+      <details><summary>¿Puedo agregar productos después?</summary><p>Sí. Los cambios o ampliaciones posteriores pueden cotizarse dependiendo del trabajo necesario.</p></details>
+      <details><summary>¿Puedo pedir cambios?</summary><p>Cada plan incluye una cantidad determinada de rondas de cambios. Cambios adicionales pueden tener un costo extra.</p></details>
+      <details><summary>¿Qué métodos de pago aceptan?</summary><p>Transferencia bancaria y PayPal.</p></details>
+      <details><summary>¿Cómo contacto con Nexo Solutions?</summary><p>Mediante Instagram <strong>@Nexo_solutions1</strong> o mediante el formulario de contacto de la página.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="contacto">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Contacto</div><h2>Hablemos de tu proyecto.</h2></div><p class="lead">Cuéntanos qué tienes en mente y te ayudaremos a encontrar la mejor opción.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card reveal"><h2 style="font-size:2rem">Tu idea puede empezar aquí.</h2><p>No necesitas un gran presupuesto para empezar a tener presencia en Internet.</p><a class="contact-link" href="https://www.instagram.com/Nexo_solutions1/" target="_blank" rel="noopener">Instagram · @Nexo_solutions1 ↗</a><div style="margin-top:30px"><h3>Métodos de pago</h3><p>Transferencia bancaria<br>PayPal</p><small style="display:block;margin-top:10px;color:#94a5bf">Los datos específicos de pago se proporcionarán al cliente cuando corresponda.</small></div></div>
+      <div class="card reveal">
+        <form id="contactForm">
+          <div class="fields"><label>Nombre<input name="nombre" required></label><label>Nombre del negocio<input name="negocio" required></label></div>
+          <div class="fields"><label>Instagram<input name="instagram" placeholder="@usuario"></label><label>Correo electrónico<input type="email" name="email" required></label></div>
+          <div class="fields"><label>Tipo de negocio<select name="tipo" required><option value="">Selecciona</option><option>Restaurante</option><option>Barbería / salón</option><option>Tienda</option><option>Emprendimiento</option><option>Profesional</option><option>Técnico</option><option>Otro</option></select></label><label>Plan de interés<select name="plan" id="planSelect"><option>Por definir</option><option>Start — $5</option><option>Basic — $10</option><option>Pro — $15</option><option>Premium — $20</option><option>Personalizado — desde $20</option></select></label></div>
+          <div class="fields"><label>Presupuesto aproximado<input name="presupuesto" placeholder="$"></label><label>&nbsp;<span style="display:block;color:transparent">.</span></label></div>
+          <label>Descripción del proyecto<textarea name="descripcion" required placeholder="Cuéntanos qué quieres crear..."></textarea></label>
+          <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+          <p id="formStatus" style="font-size:.85rem;color:var(--muted)">Formulario preparado para conectarse posteriormente a correo, backend o sistema de gestión.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta reveal"><div class="eyebrow" style="color:#b9d6ff">Nexo Solutions</div><h2>Tu próximo proyecto puede empezar aquí.</h2><p>No necesitas un gran presupuesto para empezar a tener presencia en Internet.</p><strong style="font-size:1.2rem">Planes desde $5</strong><div style="margin-top:25px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap"><a class="btn" style="background:#fff;color:#0b63f6" href="#contacto">Comenzar mi proyecto</a><a class="btn" style="border-color:#8fb9ff;color:#fff" href="#proyectos">Ver proyectos</a></div></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="logo-slot" style="background:#fff"><img src="logo.png" alt="Logo Nexo Solutions" onerror="this.style.display='none'"><span>logo.png</span></div><p style="margin-top:15px;color:#aebbd0">Tu negocio. Ahora también en la web.</p></div>
+      <div><h3>Enlaces</h3><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proyectos">Proyectos</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a></div>
+      <div><h3>Contacto</h3><a href="https://www.instagram.com/Nexo_solutions1/" target="_blank" rel="noopener">@Nexo_solutions1</a><p style="color:#aebbd0;margin-top:15px">Transferencia · PayPal</p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Nexo Solutions. Todos los derechos reservados.</span><span>Diseño moderno · claro · accesible</span></div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click',()=>{mobileMenu.style.display=mobileMenu.style.display==='block'?'none':'block'});
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.style.display='none'));
+
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  document.querySelectorAll('[data-plan]').forEach(btn=>btn.addEventListener('click',()=>{
+    const plan=btn.dataset.plan;
+    const select=document.getElementById('planSelect');
+    const map={Start:'Start — $5',Basic:'Basic — $10',Pro:'Pro — $15',Premium:'Premium — $20',Personalizado:'Personalizado — desde $20'};
+    if(map[plan]) select.value=map[plan];
+  }));
+
+  let score=0;
+  document.querySelectorAll('.quiz-option').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('.quiz-option').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active'); score=Math.max(score,Number(btn.dataset.score));
+    const names=['Start — $5','Basic — $10','Pro — $15','Premium — $20','Personalizado — desde $20'];
+    const idx=Math.max(0,Math.min(4,score-1));
+    document.getElementById('planResult').textContent='plan '+names[idx];
+    document.getElementById('planSelect').value=names[idx];
+    document.getElementById('quizResult').style.display='block';
+  }));
+
+  document.getElementById('contactForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    document.getElementById('formStatus').textContent='Solicitud preparada. Para recibirla realmente, conecta este formulario a tu servicio de correo o backend.';
+  });
+</script>
+</body>
+</html>
